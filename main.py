@@ -15,6 +15,7 @@ logger = logging.getLogger(__name__)
 
 TOKEN = os.environ.get("TOKEN")
 bot = Bot(token=TOKEN)
+dp = Dispatcher()
 
 MOSCOW_TZ = pytz.timezone('Europe/Moscow')
 
