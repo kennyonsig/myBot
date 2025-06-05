@@ -13,8 +13,7 @@ load_dotenv()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-TOKEN = os.environ.get("TOKEN")
-bot = Bot(token=TOKEN)
+bot = Bot(token=os.getenv("BOT_TOKEN"))
 dp = Dispatcher()
 
 MOSCOW_TZ = pytz.timezone('Europe/Moscow')
@@ -330,6 +329,9 @@ async def handle_ml_input(message: types.Message):
     
     # Удаляем запрос и сообщение пользователя
     await delete_messages(chat_id, request_id, message.message_id)
+
+
+
 
 if __name__ == "__main__":
     logger.info("Бот запущен!")
