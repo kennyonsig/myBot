@@ -13,8 +13,8 @@ load_dotenv()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-bot = Bot(token=os.getenv("BOT_TOKEN"))
-dp = Dispatcher()
+TOKEN = os.environ.get("TOKEN")
+bot = Bot(token=TOKEN)
 
 MOSCOW_TZ = pytz.timezone('Europe/Moscow')
 
